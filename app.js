@@ -16,7 +16,7 @@ app.use(morgan("dev"));
 
 
 
-app.get("/api/user/", UserRoute)
+app.use("/api/user/", UserRoute)
 app.get('/', (req, res) => {
    res.send('Hello World!')
 })

@@ -13,7 +13,13 @@ routes.post("/register", async (req, res) => {
    }
 });
 
+// login route 
+routes.post("/login", async (req, res) => {
+   try {
 
-
+   } catch (error) {
+      console.log(error);
+   }
+});
 
 module.exports = routes;
