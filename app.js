@@ -5,7 +5,7 @@ const morgan = require("morgan")
 const cors = require("cors")
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose');
-
+const UserRoute = require("./routes/router")
 
 
 app.use(bodyParser.json())
@@ -16,7 +16,7 @@ app.use(morgan("dev"));
 
 
 
-
+app.get("/api/user/", UserRoute)
 app.get('/', (req, res) => {
    res.send('Hello World!')
 })
