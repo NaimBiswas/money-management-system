@@ -3,5 +3,8 @@ module.exports = {
       res.send({
          "Message": "Hello THis is message from controller",
       })
+   },
+   registration(req, res) {
+
    }
 }

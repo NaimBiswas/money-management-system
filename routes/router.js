@@ -1,17 +1,11 @@
 const express = require("express");
 const Router = express.Router;
-const { login } = require("../controllers/userControllers")
+const { login, registration } = require("../controllers/userControllers")
 
 const routes = Router();
 
 
-routes.post("/register", async (req, res) => {
-   try {
-
-   } catch (error) {
-      console.log(error);
-   }
-});
+routes.post("/register", registration);
 
 // login route 
 routes.post("/login", login);
