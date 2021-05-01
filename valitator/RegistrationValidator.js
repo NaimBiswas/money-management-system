@@ -12,7 +12,7 @@ const validate = (user) => {
    }
    if (!user.password) {
       error.password = "Provide Password"
-   } else if (user.password < 6) {
+   } else if (user.password.length <= 6) {
       error.password = "Password Must Be getter Than 6 Char"
    }
    if (!user.confirmPassword) {

@@ -31,7 +31,7 @@ app.listen(port, () => {
 
 
    // Connect MongoDB at default port 27017.
-   mongoose.connect('mongodb://localhost:27017money-managment', {
+   mongoose.connect('mongodb://localhost:27017/money-managment', {
       useNewUrlParser: true,
       useCreateIndex: true,
       useUnifiedTopology: true

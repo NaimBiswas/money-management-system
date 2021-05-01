@@ -1,4 +1,5 @@
 const RegistrationValidator = require('../valitator/RegistrationValidator')
+const User = require("../models/userModel")
 module.exports = {
    login(req, res) {
       res.send({
@@ -15,7 +16,22 @@ module.exports = {
          res.status(400).json(validate.error)
       }
       else {
-         res.status(200).send("That is ok")
+         User.findOne({ email })
+            .then(user => {
+               if (user) {
+                  res.status(401).send("This Email Already Have a Account")
+               } else {
+                  let NewUser = new User({
+                     name: name,
+                     email: email,
+                     password: password,
+                  })
+                  let SaveUser = NewUser.save();
+                  res.status(201).send("Registration Success")
+               }
+            }).catch((err) => {
+               console.log(err);
+            })
       }
 
    }
