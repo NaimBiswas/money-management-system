@@ -6,11 +6,16 @@ module.exports = {
          "Message": "Hello THis is message from controller",
       })
    },
+
+
+
+
+
    registration(req, res) {
-      const { name, email, password, confirmPassword } = req.body
+      const { firstName, lastName, mobileNumber, email, password, confirmPassword } = req.body
 
       let validate = RegistrationValidator({
-         name, email, password, confirmPassword,
+         firstName, lastName, mobileNumber, email, password, confirmPassword,
       })
       if (!validate.isValid) {
          res.status(400).json(validate.error)
@@ -22,7 +27,9 @@ module.exports = {
                   res.status(401).send("This Email Already Have a Account")
                } else {
                   let NewUser = new User({
-                     name: name,
+                     firstName: firstName,
+                     lastName: lastName,
+                     mobileNumber: mobileNumber,
                      email: email,
                      password: password,
                   })

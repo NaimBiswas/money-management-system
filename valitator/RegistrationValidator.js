@@ -2,8 +2,14 @@ const validator = require("validator")
 
 const validate = (user) => {
    let error = {}
-   if (!user.name) {
-      error.name = "Please Provide Your Name"
+   if (!user.firstName) {
+      error.firstName = "Please Provide Your First Name"
+   }
+   if (!user.lastName) {
+      error.lastName = "Please Provide Your Last Name"
+   }
+   if (!user.mobileNumber) {
+      error.mobileNumber = "Please Provide Your Mobile Number"
    }
    if (!user.email) {
       error.email = "Provide Your Email";
